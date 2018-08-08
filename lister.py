@@ -12,7 +12,7 @@ for file in glob.glob("./**/*.txt", recursive=True):
         name = internal_name_line.replace("Internal Name: ", "")
         names.add(name)
 
-names = sorted(names)
+names = sorted(names, key=lambda s: s.lower())
 
 with open("games.txt", "w") as games_list:
     count = str(len(names))
